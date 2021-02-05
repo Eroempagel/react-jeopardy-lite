@@ -4,6 +4,8 @@ import "./App.css";
 import Welcome from "./components/welcome/Welcome";
 import Clock from "./components/clock/Clock";
 import Contact from "./components/contact/Contact";
+import Jeopardy from "./components/jeopardy/Jeopardy";
+import Display from "./components/display/Display";
 import Navigation from "./components/navigation/Navigation";
 import NotFoundPage from "./components/not-found-page/NotFoundPage";
 
@@ -19,6 +21,8 @@ function App() {
         />
         <Route exact path="/clock" component={Clock} />
         <Route exact path="/contact" component={Contact} />
+        <Route exact path="/jeopardy" component={Jeopardy} />
+        <Route exact path="/display" component={Display} />
         <Route exact path="/welcome/:name" component={Welcome} />
         <Route path="*" component={NotFoundPage} />
       </Switch>

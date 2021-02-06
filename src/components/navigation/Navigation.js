@@ -17,9 +17,6 @@ function Navigation(props) {
         <li>
           <Link to="/jeopardy">Jeopardy</Link>
         </li>
-        <li>
-          <Link to="/display">Display</Link>
-        </li>
       </ul>
     </div>
   );

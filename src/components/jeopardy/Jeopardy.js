@@ -1,5 +1,6 @@
 import { Component } from "react";
 import JeopardyService from "../../jeopardyService";
+import JeopardyDisplay from "../../pages/jeopardy/JeopardyDisplay";
 
 class Jeopardy extends Component {
   //set our initial state and set up our service as this.client on this component
@@ -62,23 +63,15 @@ class Jeopardy extends Component {
       categoryTitle = this.state.data.category.title;
     }
     return (
-      <div>
-        {JSON.stringify(this.state.data)}
-        <h4>{this.state.data.question}</h4>
-        <h4>{this.state.data.value}</h4>
-        <h4>{categoryTitle}</h4>
-        <form onSubmit={this.updateScore}>
-          <label>Enter Answer</label>
-          <input
-            type="text"
-            name=""
-            value={this.state.answer}
-            onChange={this.handleChange}
-          ></input>
-          <button>Submit</button>
-        </form>
-        <h4>Score: {this.state.score}</h4>
-      </div>
+      <JeopardyDisplay
+        question={this.state.data.question}
+        categoryTitle={categoryTitle}
+        value={this.state.data.value}
+        score={this.state.score}
+        answer={this.state.Answer}
+        handleChange={this.handleChange}
+        updateScore={this.updateScore}
+      />
     );
   }
 }
